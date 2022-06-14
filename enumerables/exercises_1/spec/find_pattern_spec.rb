@@ -12,19 +12,21 @@ RSpec.describe 'find pattern' do
     expect(found).to eq("unicorn")
   end
 
-  xit 'no waldo' do
+  it 'no waldo' do
     words = ["scarf", "sandcastle", "flag", "pretzel", "crow", "key"]
     found = nil
     words.each do |word|
-      # Your code goes here
+      found << word if word == "waldo"
     end
     expect(found).to eq(nil)
   end
 
-  xit 'found waldo' do
+  it 'found waldo' do
     words = ["noise", "dog", "fair", "house", "waldo", "bucket", "fish"]
     found = nil
-    # Your code goes here
+    words.each do |word|
+      found = word if word == "waldo"
+    end
     expect(found).to eq("waldo")
   end
 
