@@ -16,39 +16,51 @@ RSpec.describe 'find test' do
     expect(found).to eq(nil)
   end
 
-  xit 'found waldo' do
+  it 'found waldo' do
     words = ["noise", "dog", "fair", "house", "waldo", "bucket", "fish"]
-    # Your code goes here
+    found = words.find do |word|
+        word == "waldo"
+    end
     expect(found).to eq("waldo")
   end
 
-  xit 'no three letter words' do
+  it 'no three letter words' do
     words = ["piglet", "porridge", "bear", "blueberry"]
-    # Your code goes here
+    found = words.find do |word|
+        word.length == 3
+    end
     expect(found).to eq(nil)
   end
 
-  xit 'find 13' do
+  it 'find 13' do
     numbers = [2, 13, 19, 8, 3, 27]
-    # Your code goes here
+    found = numbers.find do |num|
+        num == 13
+    end
     expect(found).to eq(13)
   end
 
-  xit 'find first even number' do
+  it 'find first even number' do
     numbers = [3, 7, 13, 11, 10, 2, 17]
-    # Your code goes here
+    found = numbers.find do |num|
+        num.even?
+    end
     expect(found).to eq(10)
   end
 
-  xit 'first multiple of 3' do
+  it 'first multiple of 3' do
     numbers = [2, 8, 9, 27, 24, 5]
-    # Your code goes here
+    found = numbers.find do |num|
+        num % 3 == 0
+    end
     expect(found).to eq(9)
   end
 
   xit 'first word starting with q' do
     words = ["weirdo", "quill", "fast", "quaint", "quitter", "koala"]
-    # Your code goes here
+    found = words.find do |word|
+        word.
+    end
     expect(found).to eq("quill")
   end
 
