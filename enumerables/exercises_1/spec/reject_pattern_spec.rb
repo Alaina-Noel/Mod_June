@@ -9,11 +9,11 @@ RSpec.describe 'reject pattern' do
     expect(filtered).to eq([2, 93, 7, 1, 31, 368])
   end
 
-  xit 'removes vowels' do
+  it 'removes vowels' do
     letters = ["a", "l", "l", " ", "y", "o", "u", "r", " ", "b", "a", "s", "e", " ", "a", "r", "e", " ", "b", "e", "l", "o", "n", "g", " ", "t", "o", " ", "u", "s"]
     remaining = []
     letters.each do |letter|
-      # Your code goes here
+      remaining << letter unless letter.include?("a") || letter.include?("e") || letter.include?("i") || letter.include?("o") || letter.include?("u") || letter.include?("y")
     end
     expect(remaining).to eq(["l", "l", " ", "r", " ", "b", "s", " ", "r", " ", "b", "l", "n", "g", " ", "t", " ", "s"])
   end
