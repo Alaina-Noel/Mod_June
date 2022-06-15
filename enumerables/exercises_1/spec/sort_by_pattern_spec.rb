@@ -14,11 +14,11 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["Bacon", "broccoli", "candy", "Carrots", "FISH"])
   end
 
-  xit 'alphabetically by last letter' do
+  it 'alphabetically by last letter' do
     things = ["pill", "box", "glass", "water", "sponge"]
     transformed = []
-    things.each do |thing|
-      # Your code goes here
+      things.each do |thing|
+          transformed << [thing[-1], thing]
     end
     transformed = transformed.sort
     sorted = []
@@ -31,7 +31,9 @@ RSpec.describe 'sort_by pattern' do
   xit 'sort by distance' do
     distances = ["1cm", "9cm", "30cm", "4cm", "2cm"]
     transformed = []
-    # Your code goes here
+    distances.each do |distance|
+        transformed << distance
+    end
     transformed = transformed.sort
     sorted = []
     transformed.each do |sort_key, distance|
@@ -40,10 +42,20 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["1cm", "2cm", "4cm", "9cm", "30cm"])
   end
 
-  xit 'by length' do
-    words = ["heteromorph", "ancyloceratina", "bioengineering", "mathematical", "bug"]
-    # Your code goes here
-    expect(sorted).to eq(["bug", "heteromorph", "mathematical", "ancyloceratina", "bioengineering"])
+  it 'by length' do
+    words = ["heteromorph", "ancyloceratina",
+        "bioengineering", "mathematical", "bug"]
+    transformed = []
+    words.each do |word|
+        transformed << [word.length, word]
+    end
+    transformed = transformed.sort
+    sorted = []
+    transformed.each do |key, word|
+        sorted << word
+    end
+    expect(sorted).to eq(["bug", "heteromorph",
+         "mathematical", "ancyloceratina", "bioengineering"])
   end
 
   xit 'by proximity to ten' do
