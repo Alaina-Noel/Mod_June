@@ -8,17 +8,19 @@ RSpec.describe 'one' do
     expect(exactly_one).to eq(true)
   end
 
-  xit 'not even one ring' do
+  it 'not even one ring' do
     ornaments = ["bracelet", "anklet", "earring"]
     exactly_one_ring = ornaments.one? do |ornament|
-      # Your code goes here
+      ornament == "fake"
     end
     expect(exactly_one_ring).to eq(false)
   end
 
-  xit 'not just one ring' do
+  it 'not just one ring' do
     ornaments = ["bracelet", "ring", "ring", "anklet", "earring"]
-    # Your code goes here
+    exactly_one_ring = ornaments.one? do |word|
+        word == "ring"
+    end
     expect(exactly_one_ring).to eq(false)
   end
 

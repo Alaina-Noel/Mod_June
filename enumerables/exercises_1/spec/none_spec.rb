@@ -8,23 +8,27 @@ RSpec.describe 'none' do
     expect(none_broken).to eq(true)
   end
 
-  xit 'double negative' do
+  it 'double negative' do
     numbers = [9, 3, 3, 7, 6, -5, 1]
     not_none_negative = numbers.none? do |number|
-      # Your code goes here
+      number < 0
     end
     expect(not_none_negative).to eq(false)
   end
 
-  xit 'none are negative' do
+  it 'none are negative' do
     numbers = [9, 3, 1, 8, 3, 3, 5]
-    # Your code goes here
+    none_negative = numbers.none? do |num|
+        num < 0
+    end
     expect(none_negative).to eq(true)
   end
 
   xit 'none shall pass' do
     critters = ["elf", "hobbit", "dwarf", "wizard", "human"]
-    # Your code goes here
+    none_shall_pass = critters.none? do |crit|
+        crit == "critter"
+    end
     expect(none_shall_pass).to eq(true)
   end
 

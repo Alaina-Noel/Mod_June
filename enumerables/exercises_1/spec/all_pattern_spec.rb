@@ -12,7 +12,7 @@ RSpec.describe 'All Pattern' do
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = true
     numbers.each do |number|
-      # Your code goes here
+      all_zeros = true until number != 0
     end
     expect(all_zeros).to eq(false)
   end
