@@ -1,11 +1,12 @@
 class Pirate
-    attr_reader :name, :job, :cursed, :bad_boy_count
+    attr_reader :name, :job, :cursed, :bad_boy_count, :booty
 
     def initialize(name, job = "Scallywag")
         @name = name
         @job = job
         @cursed = false
         @bad_boy_count = 0
+        @booty = 0
     end
 
     def cursed?
@@ -21,18 +22,12 @@ class Pirate
             end
     end
 
+    def robs_ships
+        @booty += 100
+    end
+
 end
 
 pirate1 = Pirate.new("Blackbeard", "chef")
-p pirate1.cursed?
-p pirate1.commit_heinous_act
-p pirate1
-p pirate1.commit_heinous_act
-p pirate1
-p pirate1.commit_heinous_act
-p pirate1
-p pirate1.commit_heinous_act
-p pirate1
-p pirate1.commit_heinous_act
-p pirate1.cursed?
+p pirate1.robs_ships
 p pirate1
