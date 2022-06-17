@@ -9,15 +9,16 @@ class Pirate
     end
 
     def cursed?
-        if @bad_boy_count > 2
-            @cursed = true
-        else
-            @cursed = false
-        end
+        @cursed = cursed
     end
 
     def commit_heinous_act
         @bad_boy_count += 1
+            if @bad_boy_count > 2
+                @cursed = true
+            else
+                @cursed = false
+            end
     end
 
 end
