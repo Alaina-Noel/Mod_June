@@ -38,13 +38,14 @@ class Hobbit
     def has_ring?
         if @name == "Frodo"
             true
+        else
+            false
         end
-        false
     end
 
 
 end
 
 
-hob1 = Hobbit.new("Ryan")
+hob1 = Hobbit.new("Pop")
 p hob1.has_ring?

@@ -69,15 +69,17 @@ RSpec.describe Hobbit do
 
   end
 
-  xit 'it has the ring if its name is Frodo' do
-    # create a hobbit named Frodo
-    # create a second hobbit named Sam
-    # check that .has_ring? for Frodo returns true
-    # check that .has_ring? for Sam returns false
+  it 'it has the ring if its name is Frodo' do
+     hobbit1 = Hobbit.new('Frodo')
+     hobbit2 = Hobbit.new('Sam')
+
+    expect(hobbit1.has_ring?).to be true
+
+    expect(hobbit2.has_ring?).to be false
   end
 
-  xit 'they are short' do
-    # create a hobbit
-    # check that is_short? returns true
-  end
+  # xit 'they are short' do
+  #   # create a hobbit
+  #   # check that is_short? returns true
+  # end
 end
