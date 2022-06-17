@@ -1,4 +1,4 @@
-require './spec/spec_helper'
+require './spec_helper'
 require './lib/hobbit'
 
 RSpec.describe Hobbit do
@@ -58,10 +58,15 @@ RSpec.describe Hobbit do
     expect(hobbit.adult?).to be true
   end
 
-  xit 'is old at the age of 101' do
-    # create a hobbit
-    # have hobbit age 101 years
-    # check that hobbit.old? returns true
+  it 'is old at the age of 101' do
+      hobbit = Hobbit.new('Peter')
+
+      101.times do
+        hobbit.celebrate_birthday
+      end
+
+      expect(hobbit.old?).to be true
+
   end
 
   xit 'it has the ring if its name is Frodo' do
