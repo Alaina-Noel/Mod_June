@@ -3,8 +3,8 @@ require './lib/wizard'
 
 RSpec.describe Wizard do
   it 'has a name' do
-    wizard = Wizard.new('Eric')
-    expect(wizard.name).to eq('Eric')
+    wizard = Wizard.new('Sal')
+    expect(wizard.name).to eq('Sal')
   end
 
   it 'has a different name' do
@@ -27,7 +27,7 @@ RSpec.describe Wizard do
     expect(wizard.incantation('chown ~/bin')).to eq('sudo chown ~/bin')
   end
 
-  it 'has many root powers' do
+  xit 'has many root powers' do
     wizard = Wizard.new('Sal', bearded: true)
     expect(wizard.incantation('rm -rf /home/mirandax')).to eq('sudo rm -rf /home/mirandax')
   end
