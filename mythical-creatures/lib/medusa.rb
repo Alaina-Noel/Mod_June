@@ -9,11 +9,14 @@ class Medusa
 
     def stare(anyone)
         if @statues.size < 3
-            puts "hi #{anyone}"
-            @statues << anyone
+            @statues << anyone.name
             anyone.stoned = true
-        elsif @statuses.size == 3
-            
+        elsif @statues.size == 3
+            @statues.shift
+            @statues << anyone.name
+            anyone.stoned = true
+        end
+        @statues
     end
 
 end
@@ -35,12 +38,10 @@ class Person
 end
 
 
-medusa1 = Medusa.new('Cassiopeia')
+medusa = Medusa.new('Cassiopeia')
 ryan = Person.new('Ryan')
-p medusa1
-p ryan
-p medusa1.stare(ryan)
-p ryan
 
-#how to resassign
-p medusa1.name = "Pete"
+p medusa.stare(ryan)
+p medusa.statues.count
+p medusa.statues[0]
+p medusa.statues[0].class.superclass

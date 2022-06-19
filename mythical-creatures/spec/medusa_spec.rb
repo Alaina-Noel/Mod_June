@@ -18,8 +18,7 @@ RSpec.describe Medusa do
 
     medusa.stare(victim)
     expect(medusa.statues.count).to eq(1)
-    expect(medusa.statues.first.name).to eq('Perseus')
-    expect(medusa.statues.first).to be_an_instance_of(Person)
+    expect(medusa.statues[0]).to eq('Perseus')
   end
 
   it 'turns a person to stone when staring at them' do
@@ -32,10 +31,33 @@ RSpec.describe Medusa do
   end
 
   it 'can only have three victims' do
-    # your code here
+      medusa1 = Medusa.new('Cassiopeia')
+      ryan = Person.new('Ryan')
+      alaina = Person.new("Alaina")
+      eddie = Person.new("Eddie")
+      sydney = Person.new("Sydney")
+
+      medusa1.stare(ryan)
+      medusa1.stare(alaina)
+      medusa1.stare(eddie)
+      medusa1.stare(sydney)
+
+      expect(medusa1.statues.size).to eq 3
   end
 
   it 'if a fourth victim is stoned the first is unstoned' do
-    # your code here
+      medusa1 = Medusa.new('Cassiopeia')
+      ryan = Person.new('Ryan')
+      alaina = Person.new("Alaina")
+      eddie = Person.new("Eddie")
+      sydney = Person.new("Sydney")
+
+      medusa1.stare(ryan)
+      medusa1.stare(alaina)
+      medusa1.stare(eddie)
+      medusa1.stare(sydney)
+
+      expect(medusa1.statues).to eq ["Alaina", "Eddie", "Sydney"]
   end
+
 end
