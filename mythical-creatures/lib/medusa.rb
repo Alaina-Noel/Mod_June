@@ -45,3 +45,5 @@ p medusa.stare(ryan)
 p medusa.statues.count
 p medusa.statues[0]
 p medusa.statues[0].class.superclass
+
+p medusa.instance_variables
