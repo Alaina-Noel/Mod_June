@@ -14,10 +14,3 @@ class LeatherChair
     end
 
 end
-
-chair = LeatherChair.new
-p chair
-p chair.faded?
-p chair.expose_to_sunlight
-p chair.faded?
-p chair
