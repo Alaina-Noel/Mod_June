@@ -1,7 +1,7 @@
 class Children < Array
 
     def eldest
-        self.max_by {|element| element.age}
+        self.max_by {|child| child.age}
     end
 
 end
@@ -17,12 +17,6 @@ class Child
 
 end
 
-
-children = Children.new("Alexa", 400)
-p children
-# children << Child.new("Sarah", 10)
-# children << Child.new('Robert', 2)
-# children << Child.new('Fran', 8)
-# children << Child.new('Hilbert', 4)
-# children << Child.new('Hilbert', 40)
-# p children.eldest.name
+children = Children.new
+children << Child.new('Sarah', 5)
+p children.eldest.name

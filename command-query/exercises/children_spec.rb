@@ -16,7 +16,7 @@ RSpec.describe Children do
     expect(children.eldest.name).to eq('Sarah')
   end
 
-  it 'gets the eldest of several' do
+  xit 'gets the eldest of several' do
     children = Children.new
     children << Child.new('Robert', 2)
     children << Child.new('Fran', 8)
