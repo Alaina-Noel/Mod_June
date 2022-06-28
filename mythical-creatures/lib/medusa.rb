@@ -8,15 +8,15 @@ class Medusa
     end
 
     def stare(anyone)
-        if @statues.size < 3
+        # if @statues.size < 3
             @statues << anyone.name
+        #     anyone.stoned = true
+        # elsif @statues.size == 3
+        #     @statues.shift
+        #     @statues << anyone.name
             anyone.stoned = true
-        elsif @statues.size == 3
-            @statues.shift
-            @statues << anyone.name
-            anyone.stoned = true
-        end
-        @statues
+        # end
+        # @statues
     end
 
 end
@@ -47,3 +47,5 @@ p medusa.statues[0]
 p medusa.statues[0].class.superclass
 
 p medusa.instance_variables
+
+p ryan.stoned
