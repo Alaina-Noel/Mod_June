@@ -8,7 +8,7 @@ RSpec.describe Wallet do
     expect(wallet.cents).to eq(0)
   end
 
-  xit 'can add pennies' do
+  it 'can add pennies' do
     wallet = Wallet.new
 
     wallet << :penny
@@ -80,3 +80,4 @@ RSpec.describe Wallet do
 
     expect(wallet.cents).to eq(1)
   end
+end
