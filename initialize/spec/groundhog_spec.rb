@@ -14,7 +14,7 @@ RSpec.describe Groundhog do
     expect(gabby.name).to be("Gabby")
   end
 
-  it 'can change name' do
+  xit 'can change name' do
     groundhog = Groundhog.new("Gabby")
     groundhog.name = "Gary"
 
